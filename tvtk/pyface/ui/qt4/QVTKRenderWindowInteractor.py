@@ -488,8 +488,9 @@ class QVTKRenderWindowInteractor(QVTKRWIBaseClass):
 
         # Truncating key pressed to first character if slow machine leads to
         # multiple times the same key (required by SetEventInformationFlipY):
-        if ev.isAutoRepeat():
-            key = key[0]
+        ## Buggy
+        # if ev.isAutoRepeat():
+        #    key = key[0]
 
         self._Iren.SetEventInformationFlipY(self.__saveX, self.__saveY,
                                             ctrl, shift, key, 0, key_sym)
